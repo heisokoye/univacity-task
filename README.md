@@ -118,12 +118,15 @@ npm run test
 
 ## Known Limitations / Areas for Improvement
 
-- Full filter/sort data transformation logic can be extended beyond current modal interactions.
-- Some icons/images are represented with local/static placeholders based on available assets.
-- Accessibility can be strengthened further (expanded ARIA labels, keyboard flows, and screen-reader announcements).
-- More exhaustive unit and integration tests can be added for modal state and route transitions.
-- Empty/error states for invalid program IDs can be enhanced with user-facing fallback messaging.
--Some ion-icons were'nt working i used standard svgs as my replacements.
+### Areas for Improvement
+
+- Full filter/sort data transformation logic can be extended beyond current modal interactions
+- Some icons/images are represented with local/static placeholders based on available assets
+- Accessibility can be strengthened further (expanded ARIA labels, keyboard flows, and screen-reader announcements)
+- More exhaustive unit and integration tests can be added for modal state and route transitions
+- Empty/error states for invalid program IDs can be enhanced with user-facing fallback messaging
+- Certain Ionic icons were replaced with custom SVGs due to compatibility issues, which can be revisited for consistency
+
 
 
 ## Submission Checklist
