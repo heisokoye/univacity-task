@@ -1,0 +1,365 @@
+:host {
+  background-color: #ffffff;
+  display: block;
+  height: 100%;
+}
+
+ion-content {
+  --background: #ffffff;
+}
+
+/* ── HEADER ── */
+.custom-header-container {
+  padding: 10px 16px 0;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.top-search-row {
+  display: flex;
+  align-items: center;
+  gap: 85x;
+  margin-bottom: 12px;
+}
+
+.back-btn {
+  --padding-start: 0;
+  --padding-end: 0;
+  color: #333;
+  font-size: 10px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 8px 14px;
+}
+
+.search-input-wrapper .label {
+  font-size: 10px;
+  color: #888;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.search-input-wrapper .value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.search-input-wrapper ion-icon {
+  color: #666;
+  font-size: 16px;
+}
+
+/* ── ACTION BAR ── */
+.action-bar {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+}
+
+.action-item svg {
+  flex-shrink: 0;
+}
+
+.notification-badge {
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+}
+
+/* ── CHIPS ── */
+.chips-scroll-area {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.chips-scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  background: #f4f5f7;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.chip ion-icon {
+  font-size: 14px;
+  color: #999;
+}
+
+/* ── CONTENT ── */
+.content-padding {
+  padding: 16px;
+}
+
+.results-title {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+/* ── CARDS LIST ── */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── CARD ── */
+.univ-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+}
+
+/* Image box */
+.image-box {
+  position: relative;
+  height: 180px;
+}
+
+.top-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  background: #fff;
+  z-index: 10;
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 45% 100%);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 4px 4px 4px 4px;
+  border-radius: 20px;
+}
+
+/* Official Partner badge */
+.partner-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.partner-badge ion-icon {
+  font-size: 14px;
+  color: #3880ff;
+  flex-shrink: 0;
+}
+
+/* Logo box */
+.logo-box {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-box img {
+ width: 50px;
+ height: 50px;
+}
+
+/* Card body */
+.card-body {
+  padding: 32px 20px 20px;
+}
+
+.program-title {
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight:bold;
+  line-height: 1.35;
+  color: #1a1a1a;
+  width: 350px;
+  margin: 0 0 8px 0;
+}
+
+.uni-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.uni-name ion-icon {
+  font-size: 14px;
+  color: #3880ff;
+  flex-shrink: 0;
+}
+
+/* Info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2px 3px;
+  margin-bottom: 10px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #777;
+}
+
+.grid-item ion-icon {
+  font-size: 14px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.flag-icon {
+  width: 16px;
+  height: 11px;
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+/* Language row */
+.language-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.language-row ion-icon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Card footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 14px;
+}
+
+.price {
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: #222;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-actions ion-icon {
+  font-size: 22px;
+  color: #3880ff;
+  cursor: pointer;
+}
+
+.footer-actions ion-icon.liked {
+  color: #eb445a;
+}
+
+/* ── DESKTOP  ── */
+@media (min-width: 768px) {
+  .custom-header-container {
+    padding: 12px 24px 0;
+  }
+
+  .content-padding {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+  }
+
+  .cards-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  *{
+    --background: white;
+  }
+  ion-header{
+    margin: auto;
+    width: 80%;
+  }
+  .cards-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

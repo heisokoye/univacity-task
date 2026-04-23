@@ -1,0 +1,270 @@
+<!-- 
+  ======================================================
+  Program Detail Template
+  Provides an in-depth view of a specific program's requirements, features, and layout.
+  ======================================================
+-->
+<!-- The core scrollable area storing all content details -->
+<ion-content [scrollY]="true">
+
+  <!-- ── Hero Image ─────────────────────────────────────────────────────── -->
+  <!-- Topmost header segment displaying the campus image and navigational buttons -->
+  <div class="hero-container">
+    <img src="assets/imgs/university.webp" class="hero-img" alt="Program image" />
+    
+    <!-- Hero Logo at bottom left -->
+    <div class="hero-logo">
+      <span class="uh-text">UH</span>
+      <div class="black-bottom"></div>
+    </div>
+
+    <!-- Floating nav buttons top left -->
+    <button class="nav-circle nav-back" (click)="goBack()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+
+    <!-- Floating nav buttons bottom right -->
+    <div class="hero-nav-bottom-right">
+      <button class="nav-circle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </button>
+      <button class="nav-circle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Body ───────────────────────────────────────────────────────────── -->
+  <div class="detail-body">
+
+    <!-- Title + University -->
+    <h1 class="prog-title">Environmental Systems Sciences / Climate and Environmental Monitoring</h1>
+
+    <div class="uni-row">
+      <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.5l3.09 2.22 3.8.31.63 3.77 2.91 2.5-1.46 3.52 1.46 3.52-2.91 2.5-.63 3.77-3.8.31L12 22.5l-3.09-2.22-3.8-.31-.63-3.77-2.91-2.5 1.46-3.52-1.46-3.52 2.91-2.5.63-3.77 3.8-.31L12 1.5z" fill="#2563EB"/><path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.59-6.59 1.41 1.41L10 15.5z" fill="white"/></svg>
+      <span class="uni-name">University of Liverpool</span>
+      <svg class="flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="16" height="16"><path fill="#ED2939" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"/><path fill="#FFF" d="M0 12h36v3H0zm0 6h36v3H0zm0 6h36v3H0z"/><path fill="#002366" d="M0 5a4 4 0 0 1 4-4h14v16H0V5z"/><circle fill="#FFF" cx="4" cy="4" r="1.5"/><circle fill="#FFF" cx="9" cy="4" r="1.5"/><circle fill="#FFF" cx="14" cy="4" r="1.5"/><circle fill="#FFF" cx="4" cy="9" r="1.5"/><circle fill="#FFF" cx="9" cy="9" r="1.5"/><circle fill="#FFF" cx="14" cy="9" r="1.5"/><circle fill="#FFF" cx="4" cy="14" r="1.5"/><circle fill="#FFF" cx="9" cy="14" r="1.5"/><circle fill="#FFF" cx="14" cy="14" r="1.5"/></svg>
+      <span class="country">United States</span>
+    </div>
+
+    <p class="hero-description">The master's programme in Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz offers a wide spectrum of disciplines, challenging students to develop improved strategies and solutions. This unique programme equips students with the skills to tackle environmental problems effectively.</p>
+
+    <!-- Stats row -->
+    <div class="stats-row bordered-row">
+      <div class="stat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>191126 Views</span>
+      </div>
+      <div class="stat-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span>283612 Impression</span>
+      </div>
+    </div>
+
+    <!-- ── Program Breakdown ─────────────────────────────────────────── -->
+    <h2 class="section-heading">Program Breakdown</h2>
+
+    <div class="breakdown-grid">
+      <div class="breakdown-item">
+        <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <div class="breakdown-text">
+          <strong>2 Years</strong>
+          <small>Duration</small>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <div class="breakdown-text">
+          <strong>Masters</strong>
+          <small>Level</small>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <div class="breakdown-text">
+          <strong>$377.06 per semester</strong>
+          <small>Tuition Fee</small>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <div class="breakdown-text">
+          <strong>On Campus</strong>
+          <small>Attendance</small>
+        </div>
+      </div>
+      <div class="breakdown-item">
+        <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+        <div class="breakdown-text">
+          <strong>Fulltime</strong>
+          <small>Attendance</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Description ───────────────────────────────────────────────── -->
+    <div class="content-section">
+      <h2 class="section-heading">Description</h2>
+      <p class="section-body">
+        Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional…
+      </p>
+      <button class="read-more-btn-pill">
+        Read more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Requirement ───────────────────────────────────────────────── -->
+    <div class="content-section">
+      <h2 class="section-heading">Requirement</h2>
+      <ul class="bordered-list">
+        <li>
+          <svg class="req-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 10 16 20 6"/><polyline points="2 13 5 16 8 13"/></svg>
+          <span>Completed relevant degree program</span>
+        </li>
+        <li>
+          <svg class="req-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 10 16 20 6"/><polyline points="2 13 5 16 8 13"/></svg>
+          <span>Copy of a valid Identification Card or Passport</span>
+        </li>
+        <li>
+          <svg class="req-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 10 16 20 6"/><polyline points="2 13 5 16 8 13"/></svg>
+          <span>Degree Diploma</span>
+        </li>
+        <li>
+          <svg class="req-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 10 16 20 6"/><polyline points="2 13 5 16 8 13"/></svg>
+          <span>Documents of completed university degree with a minimum study duration of three years (bachelor's program or diploma's program)</span>
+        </li>
+      </ul>
+      <button class="read-more-btn-pill mt-neg">
+        Read more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <!-- ── Structure ─────────────────────────────────────────────────── -->
+    <div class="content-section">
+      <h2 class="section-heading">Structure</h2>
+      <p class="section-body">
+        Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional…
+      </p>
+      <button class="read-more-btn-pill">
+        Read more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Fees ──────────────────────────────────────────────────────── -->
+    <div class="content-section">
+      <h2 class="section-heading">Fees</h2>
+      <p class="fees-note">
+        Service fee is €50.<br>
+        For international degree students, the tuition fee is € 726,72
+      </p>
+
+      <div class="fees-grid breakdown-grid">
+        <div class="breakdown-item">
+          <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+          <div class="breakdown-text">
+            <strong>$0</strong>
+            <small>Housing Fee</small>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+          <div class="breakdown-text">
+            <strong>$0</strong>
+            <small>Acceptance Fee</small>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+          <div class="breakdown-text">
+            <strong>$377.06 per semester</strong>
+            <small>Tuition Fee</small>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+          <div class="breakdown-text">
+            <strong>$51.88</strong>
+            <small>Application Fee</small>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <svg class="diamond" width="16" height="16" viewBox="0 0 24 24" fill="#111827"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>
+          <div class="breakdown-text">
+            <strong>$0</strong>
+            <small>Living Fee</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Extra Information ─────────────────────────────────────────── -->
+    <div class="content-section extra-info-section">
+      <h2 class="section-heading">Extra Information</h2>
+
+      <ul class="bordered-list extra-list">
+        <li>
+          <svg class="info-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div class="extra-text">
+            <span>Main, Portierloge Wall, Portierloge ReSoWi, Portierloge Hauptgebäude</span>
+            <small>Campus(es)</small>
+          </div>
+        </li>
+
+        <li>
+          <svg class="info-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div class="extra-text">
+            <span>Winter 2024</span>
+            <small>Intakes</small>
+          </div>
+        </li>
+
+        <li>
+          <svg class="info-icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div class="extra-text">
+            <span>English Language</span>
+            <small>Study Language</small>
+          </div>
+        </li>
+      </ul>
+
+      <hr class="divider">
+
+      <!-- Bottom summary card -->
+      <div class="summary-card">
+        <div class="summary-logo">
+           <span class="uh-text">UH</span>
+           <div class="black-bottom"></div>
+        </div>
+        <div class="summary-text">
+          <strong>Environmental Systems Sciences / Climate and Environmental Monitoring</strong>
+          <span class="summary-price">€353.36/per semester</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spacer so last content clears footer -->
+    <div class="scroll-spacer"></div>
+
+  </div>
+</ion-content>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+<ion-footer class="ion-no-border">
+  <div class="footer-bar">
+    <button class="back-btn-pill" (click)="goBack()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Back
+    </button>
+    <button class="apply-btn-pill">
+      Apply now
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</ion-footer>

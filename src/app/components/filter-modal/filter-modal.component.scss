@@ -1,0 +1,278 @@
+// ─── Host ─────────────────────────────────────────────────────────────────────
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  // Critical: makes ion-content fill the remaining space between header & footer
+  contain: layout;
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+ion-header {
+  ion-toolbar {
+    --background: #ffffff;
+    --color: #111827;
+    --border-width: 0;
+    --box-shadow: none;
+    --padding-start: 6px;
+    --padding-end: 6px;
+  }
+
+  ion-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.2px;
+  }
+
+  ion-button {
+    --color: #111827;
+    --ripple-color: transparent;
+    --background-activated: transparent;
+  }
+}
+
+// ─── Content ──────────────────────────────────────────────────────────────────
+ion-content {
+  --background: #ffffff;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 8px;
+  --padding-bottom: 0;
+  // Ensures it stretches and scrolls properly inside the full-screen modal
+  flex: 1;
+  height: 0; // flex trick: lets ion-content grow and scroll correctly
+}
+
+// ─── Tuition Section ──────────────────────────────────────────────────────────
+.tuition-section {
+  padding: 16px 0 0;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 14px;
+}
+
+// ─── Min / Max Inputs ─────────────────────────────────────────────────────────
+.range-inputs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.input-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 11px 14px;
+  background: #ffffff;
+  gap: 8px;
+
+  .prefix {
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    background: transparent;
+    min-width: 0;
+  }
+}
+
+// ─── Range Slider ─────────────────────────────────────────────────────────────
+.custom-range {
+  --bar-height: 4px;
+  --bar-background: #e5e7eb;
+  --bar-background-active: #2563eb;
+  --knob-background: #2563eb;
+  --knob-size: 20px;
+  --knob-box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+
+  padding: 8px 0 0;
+  margin: 0 -2px;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+
+  span {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+  }
+}
+
+// ─── Divider ──────────────────────────────────────────────────────────────────
+.divider {
+  height: 1px;
+  background: #f3f4f6;
+  margin: 20px -16px;
+}
+
+// ─── Filter List ──────────────────────────────────────────────────────────────
+.filter-list {
+  background: transparent;
+  padding: 0;
+  margin: 0 -16px;
+
+  ion-item {
+    --background: #ffffff;
+    --background-activated: #f9fafb;
+    --background-focused: #f9fafb;
+    --padding-start: 16px;
+    --inner-padding-end: 12px;
+    --min-height: 62px;
+    --border-color: #f3f4f6;
+
+    ion-label {
+      margin: 14px 0;
+
+      h2 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 3px;
+        letter-spacing: -0.1px;
+      }
+
+      p {
+        font-size: 13px;
+        color: #9ca3af;
+        margin: 0;
+
+        &.selected {
+          color: #9ca3af;
+        }
+      }
+    }
+    &.grayed-out {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+  }
+}
+
+// ─── Custom Chevron Icon ───────────────────────────────────────────────────────
+.chevron-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+// ─── Scroll Spacer ────────────────────────────────────────────────────────────
+.scroll-bottom-spacer {
+  height: 110px;
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+ion-footer {
+  background: transparent;
+  // Remove any default Ionic border/shadow on the footer element itself
+  box-shadow: none;
+
+  &::before {
+    display: none; // removes Ionic's default top hairline on ion-footer
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px calc(16px + var(--ion-safe-area-bottom, 0px));
+  background: #ffffff;
+  border-top: 1px solid #f3f4f6;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.clear-btn {
+  flex: 0 0 auto;
+  min-width: 100px;
+  height: 52px;
+  --color: #2563eb;
+  --border-radius: 26px;
+  --background: #dbeafe;
+  --background-activated: #bfdbfe;
+  --ripple-color: #bfdbfe;
+  --padding-start: 18px;
+  --padding-end: 18px;
+  --box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.apply-btn {
+  flex: 1;
+  height: 52px;
+  --background: #2563eb;
+  --background-activated: #1d4ed8;
+  --color: #ffffff;
+  --border-radius: 26px;
+  --ripple-color: #1d4ed8;
+  --padding-start: 18px;
+  --padding-end: 18px;
+  --box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+
+  ion-icon {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  ion-header {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .tuition-section,
+  .filter-list,
+  .scroll-bottom-spacer,
+  .footer-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .divider {
+    margin: 20px 0;
+  }
+
+  .filter-list {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

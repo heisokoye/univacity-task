@@ -1,0 +1,165 @@
+<!-- 
+  ======================================================
+  Filter Modal Component Template
+  Acts as a full-screen overlay for advanced search constraints.
+  ======================================================
+-->
+
+<!-- MAIN VIEW: Renders the primary tuition slider and category list -->
+<ng-container *ngIf="currentView === 'main'">
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Safely closes the modal overlay completely -->
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Scrollable body containing all the controls -->
+<ion-content [scrollY]="true">
+
+  <div class="tuition-section">
+    <h3 class="section-title">Tuition fee</h3>
+
+    <div class="range-inputs">
+      <div class="input-box">
+        <span class="prefix">Min</span>
+        <input type="text" [(ngModel)]="minFeeStr" (blur)="updateRangeFromInput()" />
+      </div>
+      <div class="input-box">
+        <span class="prefix">Max</span>
+        <input type="text" [(ngModel)]="maxFeeStr" (blur)="updateRangeFromInput()" />
+      </div>
+    </div>
+
+    <ion-range
+      dualKnobs="true"
+      [min]="0"
+      [max]="200"
+      [(ngModel)]="tuitionRange"
+      (ionChange)="updateInputsFromRange()"
+      class="custom-range">
+    </ion-range>
+
+    <div class="range-labels">
+      <span>50k</span>
+      <span>120k</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- No detail="true" — we draw our own chevron SVG -->
+  <ion-list lines="full" class="filter-list">
+
+    <ion-item button (click)="currentView = 'institutes'">
+      <ion-label>
+        <h2>Institutes</h2>
+        <p>None selected</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+    <ion-item button class="grayed-out" (click)="null">
+      <ion-label>
+        <h2>Education Level</h2>
+        <p>None selected</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+    <ion-item button class="grayed-out" (click)="null">
+      <ion-label>
+        <h2>Country</h2>
+        <p class="selected">United States, United Kingdom</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+    <ion-item button class="grayed-out" (click)="null">
+      <ion-label>
+        <h2>Discipline</h2>
+        <p class="selected">Law, Mathematics</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+    <ion-item button class="grayed-out" (click)="null">
+      <ion-label>
+        <h2>Study Language</h2>
+        <p>None selected</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+    <ion-item button class="grayed-out" (click)="null" lines="none">
+      <ion-label>
+        <h2>Attendance</h2>
+        <p>None selected</p>
+      </ion-label>
+      <div slot="end" class="chevron-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </div>
+    </ion-item>
+
+  </ion-list>
+
+  <!-- Spacer so last item clears the sticky footer -->
+  <div class="scroll-bottom-spacer"></div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer-container">
+    <ion-button fill="clear" class="clear-btn" (click)="clearAll()">
+      Clear all
+    </ion-button>
+    <ion-button class="apply-btn" (click)="close()">
+      View 1024 Results
+      <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>
+</ng-container>
+
+<ng-container *ngIf="currentView === 'institutes'">
+  <app-institutes-view (back)="currentView = 'main'" (apply)="close()"></app-institutes-view>
+</ng-container>

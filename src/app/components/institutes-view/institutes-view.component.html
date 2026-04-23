@@ -1,0 +1,80 @@
+<!-- 
+  ======================================================
+  Institutes View Component Template
+  Nested view accessed from the main filter modal to select a single university.
+  ======================================================
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Navigates back out to the main Filter screen without saving -->
+      <ion-button (click)="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="header-icon">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Institutes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- List of dynamically rendered universities -->
+<ion-content>
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <input type="text" placeholder="Search institutes" [(ngModel)]="searchQuery" />
+    </div>
+  </div>
+
+  <ion-list lines="none" class="institutes-list">
+    <ion-item *ngFor="let inst of institutes" 
+              button
+              detail="false"
+              (click)="selectInstitute(inst.id)"
+              [class.selected]="selectedInstitute === inst.id">
+      <div slot="start" class="inst-logo">
+        <div class="logo-circle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="11" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
+            <path d="M2.5 12h19M12 2.5a15.3 15.3 0 0 1 0 19M12 2.5a15.3 15.3 0 0 0 0 19" stroke="#e5e7eb" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="uni">UNI</span>
+          <span class="gra">GRA</span>
+        </div>
+      </div>
+      
+      <ion-label>
+        <div class="inst-header">
+          <h2>{{ inst.name }}</h2>
+          <span class="badge">{{ inst.count }}</span>
+        </div>
+        <p class="country-row">
+          <span class="flag">🇨🇦</span> {{ inst.country }}
+        </p>
+      </ion-label>
+      
+      <div slot="end" class="radio-circle">
+        <svg *ngIf="selectedInstitute === inst.id" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="11" stroke="#2563eb" stroke-width="1.5"/>
+          <path d="M7 12L10.5 15L17 8" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg *ngIf="selectedInstitute !== inst.id" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="11" stroke="#9ca3af" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer-container">
+    <ion-button fill="clear" class="clear-btn" (click)="clearAll()">
+      Clear all
+    </ion-button>
+    <ion-button class="apply-btn" (click)="applyFilter()">
+      Apply Filter
+    </ion-button>
+  </div>
+</ion-footer>

@@ -1,0 +1,261 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  contain: layout;
+}
+
+// Ensure the same styling as filter-modal
+ion-header {
+  ion-toolbar {
+    --background: #ffffff;
+    --color: #111827;
+    --border-width: 0;
+    --box-shadow: none;
+    --padding-start: 6px;
+    --padding-end: 6px;
+  }
+
+  ion-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.2px;
+  }
+
+  ion-button {
+    --color: #111827;
+    --ripple-color: transparent;
+    --background-activated: transparent;
+  }
+}
+
+ion-content {
+  --background: #ffffff;
+  flex: 1;
+  height: 0;
+}
+
+// Search
+.search-container {
+  padding: 16px;
+}
+
+.search-input-wrapper {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #111827;
+    background: transparent;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+  }
+}
+
+// List
+.institutes-list {
+  background: transparent;
+  padding: 0 16px;
+
+  ion-item {
+    --background: transparent;
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+    --min-height: 72px;
+    --border-color: transparent;
+    margin-bottom: 4px;
+    border-radius: 12px;
+
+    &.selected {
+      --background: #f4f4f5;
+    }
+
+    .inst-logo {
+      width: 42px;
+      height: 42px;
+      background: #fcda11; // yellow matching design
+      border-radius: 4px;
+      margin-right: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      padding-right: 4px;
+      overflow: visible; // allows globe to bleed left
+      flex-shrink: 0;
+
+      .logo-circle {
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 50%;
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .logo-text {
+        font-family: 'Arial', sans-serif;
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 1;
+        color: #000000;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+
+        .uni, .gra {
+          display: block;
+          letter-spacing: -0.2px;
+        }
+      }
+    }
+
+    ion-label {
+      margin: 0;
+
+      .inst-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 4px;
+
+        h2 {
+          font-size: 14.5px;
+          font-weight: 400; // refined from 500
+          color: #111827;
+          margin: 0;
+        }
+
+        .badge {
+          background: #eff6ff;
+          color: #2563eb;
+          font-size: 10px;
+          font-weight: 700;
+          padding: 2px 6px;
+          border-radius: 12px;
+        }
+      }
+
+      .country-row {
+        font-size: 12.5px;
+        color: #6b7280;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        .flag {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .radio-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Footer
+ion-footer {
+  background: transparent;
+  box-shadow: none;
+  &::before { display: none; }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px calc(16px + var(--ion-safe-area-bottom, 0px));
+  background: #ffffff;
+  border-top: 1px solid #f3f4f6;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.clear-btn {
+  flex: 0 0 auto;
+  min-width: 100px;
+  height: 52px;
+  --color: #2563eb;
+  --border-radius: 26px;
+  --background: #dbeafe;
+  --background-activated: #bfdbfe;
+  --ripple-color: #bfdbfe;
+  --padding-start: 18px;
+  --padding-end: 18px;
+  --box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.apply-btn {
+  flex: 1;
+  height: 52px;
+  --background: #2563eb;
+  --background-activated: #1d4ed8;
+  --color: #ffffff;
+  --border-radius: 26px;
+  --ripple-color: #1d4ed8;
+  --padding-start: 18px;
+  --padding-end: 18px;
+  --box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  ion-header {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .search-container,
+  .institutes-list,
+  .footer-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
