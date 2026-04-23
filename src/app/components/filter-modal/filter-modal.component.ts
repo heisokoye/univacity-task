@@ -5,10 +5,8 @@ import { IonicModule, ModalController } from '@ionic/angular';
 import { InstitutesViewComponent } from '../institutes-view/institutes-view.component';
 
 /**
- * Filter Modal Component
- * 
- * Provides an elaborate overlay GUI for adjusting search constraints. 
- * Allows users to set tuition bounds and optionally drills deeper into selecting an actual institute.
+ * Full-screen filter modal used by the search page.
+ * Handles tuition range and navigation into the institute picker view.
  */
 @Component({
   selector: 'app-filter-modal',
@@ -18,30 +16,27 @@ import { InstitutesViewComponent } from '../institutes-view/institutes-view.comp
   imports: [IonicModule, CommonModule, FormsModule, InstitutesViewComponent]
 })
 export class FilterModalComponent {
-
-  // Tracks if the user is looking at the 'main' overview filter page or if they've 
-  // drilled down into the child 'institutes' selection page.
+  // Internal view switch inside the modal.
   currentView: 'main' | 'institutes' = 'main';
 
-  // Backing data struct representing the pure numeric bounds from the range slider
+  // Numeric values used by ion-range (in thousands).
   tuitionRange = { lower: 50, upper: 120 };
   
-  // Format string representations since our text-fields necessitate dollar signs and comma separation
+  // Formatted text values shown in min/max inputs.
   minFeeStr = '$50,000';
   maxFeeStr = '$120,000';
 
   constructor(private modalCtrl: ModalController) {}
 
   /**
-   * Safely dismisses the overlay without applying anything.
+   * Close modal and return to the search screen.
    */
   close() {
     this.modalCtrl.dismiss();
   }
 
   /**
-   * Triggered gracefully when the user drags the native ION-RANGE slider.
-   * Automatically parses the raw numbers into our clean comma-formatted strings.
+   * Sync text fields when slider values change.
    */
   updateInputsFromRange() {
     this.minFeeStr = `$${this.tuitionRange.lower},000`;
@@ -49,16 +44,14 @@ export class FilterModalComponent {
   }
 
   /**
-   * Operates as a two-way bind failsafe. If the user decides to bypass the slider entirely 
-   * and just aggressively type `$5,000` into the text box, this aggressively scrubs non-numeric 
-   * identifiers and updates the slider's physical knob position natively to reflect their keystrokes.
+   * Parse typed fee inputs and push values back to the slider model.
    */
   updateRangeFromInput() {
-    // Strip everything that isn't a digit using strict Regex
+    // Keep digits only so values like "$50,000" can be parsed safely.
     const minStr = this.minFeeStr.replace(/[^0-9]/g, '');
     const maxStr = this.maxFeeStr.replace(/[^0-9]/g, '');
 
-    // Downscale integer thousands to match the max bounds (200 threshold) on the range slider
+    // Inputs are currency, slider uses "thousands" units.
     const minVal = parseInt(minStr, 10) / 1000 || 0;
     const maxVal = parseInt(maxStr, 10) / 1000 || 200;
 
@@ -66,11 +59,11 @@ export class FilterModalComponent {
   }
 
   /**
-   * Universal reset button. Restores the absolute lowest and highest constraints unconditionally.
+   * Reset fee controls to full range.
    */
   clearAll() {
     this.tuitionRange = { lower: 0, upper: 200 };
-    // Synchronize inputs natively so we don't end up out-of-sync
+    // Keep text inputs aligned with reset slider values.
     this.updateInputsFromRange();
   }
 }
